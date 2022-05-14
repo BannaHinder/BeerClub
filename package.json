@@ -1,0 +1,20 @@
+{
+  "name": "medlemsregister",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hanna",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "mongoose": "^6.3.3",
+    "nodemon": "^2.0.16",
+    "querystring": "^0.2.1"
+  },
+  "type": "module"
+}

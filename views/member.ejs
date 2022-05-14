@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Member</title>
+</head>
+<body>
+    <%- include('header') %>
+
+      <h2> <%= locals.name %> </h2>
+      <p>Email: <%= locals.email %> </p>
+      <p>Tel Number: <%= locals.telNumber %> </p>
+      <p>Date Joined:<%= locals.date.toUTCString() %> </p>
+      <p> Favourite type of beer: <%= locals.favouriteBeer %> </p>
+
+      <a href="/members/delete/<%= _id %>"><button>Delete</button></a>
+      <a href="/members/update/<%= _id %>"><button>Update User</button></a>
+      
+      <%- include('footer') %>
+      <script>
+
+      </script>
+</body>
+</html>

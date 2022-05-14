@@ -1,0 +1,9 @@
+*{
+    margin:0;
+    
+}
+
+header{
+    background: gray;
+    border-bottom: black solid 1px;
+}

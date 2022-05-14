@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Members</title>
+  </head>
+  <body>
+    <%- include('header') %>
+
+    <p id="message"></p>
+
+    <% if (!locals.message==null){%>
+    <p><%=locals.message %></p>
+    <%}%>
+    <ul>
+      <% members.forEach((member) => { %>
+      <li>
+        <a href="/members/<%= member._id %>"> <%= member.name%> </a>
+      </li>
+      <% }); %>
+    </ul>
+
+    <%- include('footer') %>
+
+    <script>
+      const messagePara = document.getElementById("message");
+      function getParams() {
+        const urlParams = new URLSearchParams(location.search);
+        console.log(urlParams);
+        if (urlParams.has("deleted")) {
+          const params = Object.fromEntries(urlParams.entries());
+          console.log(params);
+          messagePara.innerHTML = `The user ${params.deleted} was ${Object.keys(params)}`;
+        }
+      }
+      getParams();
+    </script>
+  </body>
+</html>
