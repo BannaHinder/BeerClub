@@ -56,7 +56,6 @@ app.get('/register', (req,res)=>{
 })
 
 //REGISTER NEW MEMBER
-
 app.post('/register', async (req,res) =>{
     console.log(req.body)
     req.body.date = new Date();
@@ -65,7 +64,8 @@ app.post('/register', async (req,res) =>{
     } catch (error) {
         res.status(400).json({message: error})
     }
-    res.redirect('/members') //redirectar tillbaka då det itne finns ngt att se på post-routen
+    const addedMember = encodeURIComponent(req.body.name)
+    res.redirect('/members?registered=' + addedMember) //redirectar tillbaka då det itne finns ngt att se på post-routen
     })
 
 //DELETE
@@ -75,7 +75,7 @@ app.get('/members/delete/:id', getPost, async (req,res) =>{
         if (err) return console.log(err)
         console.log(req.body)
         var deletedUser = encodeURIComponent(res.member.name);
-        res.redirect('/members/?deleted=' + deletedUser)
+        res.redirect('/members?deleted=' + deletedUser)
 
       })
     } catch (error) {

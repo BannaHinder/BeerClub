@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+}
+h2 {
+  margin: 20px 0;
+}
+header {
+  background: black;
+  height: 150px;
+  color: wheat;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(to left, rgba(255,255,255,0) 20%,
+              rgba(0,0,0,1)), url('./img/beer.jpg');
+  div{
+
+  }
+}
+.register-bg {
+  min-height: 120vh;
+  background: url("./img/beerkeg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  display: flex;
+  article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 100px 0;
+    background: black;
+    width: 100%;
+    color: wheat;
+    height: 300px;
+    section {
+      align-self: center;
+      padding-bottom: 20px;
+      fieldset {
+        border: 2px solid rgb(95, 18, 18);
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+      }
+      div {
+        margin: 5px 0;
+      }
+    }
+    img {
+      height: 100%;
+    }
+  }
+  .registerbtn {
+    top: 300px;
+    margin: 10px;
+    border: 5px solid rgb(53, 11, 11);
+    color: rgb(46, 12, 12);
+    background: url("./img/beerification.jpg");
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    left: 100%;
+    align-self: center;
+    box-shadow: inset -5px -5px 22px rgb(38, 0, 0);
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+footer {
+  background: black;
+  bottom: 0px;
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: wheat;
+  nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  div {
+    flex: 1;
+  }
+  a {
+    color: wheat;
+    text-decoration: none;
+  }
+}

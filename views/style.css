@@ -1,9 +1,134 @@
-*{
-    margin:0;
-    
+* {
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-header{
-    background: gray;
-    border-bottom: black solid 1px;
+h2 {
+  margin: 20px 0;
 }
+
+header {
+  background: black;
+  height: 150px;
+  color: wheat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, rgba(255, 255, 255, 0)), to(black)), url("./img/beer.jpg");
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 20%, black), url("./img/beer.jpg");
+}
+
+.register-bg {
+  min-height: 120vh;
+  background: url("./img/beerkeg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.register-bg article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 100px 0;
+  background: black;
+  width: 100%;
+  color: wheat;
+  height: 300px;
+}
+
+.register-bg article section {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-bottom: 20px;
+}
+
+.register-bg article section fieldset {
+  border: 2px solid #5f1212;
+  border-radius: 8px;
+}
+
+.register-bg article section div {
+  margin: 5px 0;
+}
+
+.register-bg article img {
+  height: 100%;
+}
+
+.register-bg .registerbtn {
+  top: 300px;
+  margin: 10px;
+  border: 5px solid #350b0b;
+  color: #2e0c0c;
+  background: url("./img/beerification.jpg");
+  width: 300px;
+  height: 100px;
+  border-radius: 50px;
+  left: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-shadow: inset -5px -5px 22px #260000;
+          box-shadow: inset -5px -5px 22px #260000;
+  font-size: large;
+  font-weight: bold;
+}
+
+footer {
+  background: black;
+  bottom: 0px;
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: wheat;
+}
+
+footer nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+footer a {
+  color: wheat;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

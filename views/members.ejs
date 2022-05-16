@@ -35,6 +35,11 @@
           console.log(params);
           messagePara.innerHTML = `The user ${params.deleted} was ${Object.keys(params)}`;
         }
+        if (urlParams.has("registered")) {
+            const params = Object.fromEntries(urlParams.entries());
+          console.log(params);
+          messagePara.innerHTML = `Welcome to Beer Club ${params.registered}!!`;
+        }
       }
       getParams();
     </script>
