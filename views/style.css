@@ -17,13 +17,59 @@ header {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  background: -webkit-gradient(linear, right top, left top, color-stop(20%, rgba(255, 255, 255, 0)), to(black)), url("./img/beer.jpg");
-  background: linear-gradient(to left, rgba(255, 255, 255, 0) 20%, black), url("./img/beer.jpg");
+}
+
+header img {
+  padding: 20px;
+}
+
+header div {
+  background: url("/img/beerglass.jpg");
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(black)), url("/img/beerglass.jpg");
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, black 100%), url("/img/beerglass.jpg");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  background: black;
+  height: 100vh;
+  color: wheat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.start-bg {
+  min-height: 120vh;
+  background: url("/img/beer.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.start-bg h2 {
+  padding: 100px;
 }
 
 .register-bg {
   min-height: 120vh;
-  background: url("./img/beerkeg.jpg");
+  background: url("/img/beerkeg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -68,6 +114,12 @@ header {
 
 .register-bg article section div {
   margin: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .register-bg article img {
@@ -79,7 +131,7 @@ header {
   margin: 10px;
   border: 5px solid #350b0b;
   color: #2e0c0c;
-  background: url("./img/beerification.jpg");
+  background: url("/img/beerification.jpg");
   width: 300px;
   height: 100px;
   border-radius: 50px;
@@ -127,7 +179,7 @@ footer div {
           flex: 1;
 }
 
-footer a {
+a {
   color: wheat;
   text-decoration: none;
 }

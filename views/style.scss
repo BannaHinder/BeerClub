@@ -12,15 +12,41 @@ header {
   color: wheat;
   display: flex;
   width: 100%;
-  background: linear-gradient(to left, rgba(255,255,255,0) 20%,
-              rgba(0,0,0,1)), url('./img/beer.jpg');
+  img{
+    padding:20px;
+  }
   div{
-
+    background: url('/img/beerglass.jpg');
+    background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 100%), url('/img/beerglass.jpg');
+    width: 100%;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+}
+main{
+    background:black;
+    height:100vh;
+    color:wheat;
+    display: flex;
+}
+.start-bg{
+  min-height: 120vh;
+  background: url("/img/beer.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  h2{
+padding: 100px;
   }
 }
 .register-bg {
   min-height: 120vh;
-  background: url("./img/beerkeg.jpg");
+  background: url("/img/beerkeg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,6 +72,8 @@ header {
       }
       div {
         margin: 5px 0;
+        display: flex;
+        justify-content: space-between;
       }
     }
     img {
@@ -57,7 +85,7 @@ header {
     margin: 10px;
     border: 5px solid rgb(53, 11, 11);
     color: rgb(46, 12, 12);
-    background: url("./img/beerification.jpg");
+    background: url("/img/beerification.jpg");
     width: 300px;
     height: 100px;
     border-radius: 50px;
@@ -86,8 +114,8 @@ footer {
   div {
     flex: 1;
   }
-  a {
+}
+a {
     color: wheat;
     text-decoration: none;
   }
-}

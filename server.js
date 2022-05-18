@@ -55,7 +55,7 @@ app.get('/register', (req,res)=>{
     res.render('register', {text: 'what'})
 })
 
-//REGISTER NEW MEMBER
+//REGISTER NEW MEMBER   
 app.post('/register', async (req,res) =>{
     console.log(req.body)
     req.body.date = new Date();
@@ -69,7 +69,7 @@ app.post('/register', async (req,res) =>{
     })
 
 //DELETE
-app.get('/members/delete/:id', getPost, async (req,res) =>{
+app.get('/members/delete/:id', getMember, async (req,res) =>{
     try {  
      memberCollection.deleteOne({_id: ObjectId( req.params.id)}, (err, result) => {
         if (err) return console.log(err)
@@ -84,7 +84,7 @@ app.get('/members/delete/:id', getPost, async (req,res) =>{
     
 } )
 
-async function getPost(req,res,next){
+async function getMember(req,res,next){
     let member
     try {
         member = await memberCollection.findOne({ _id: ObjectId(req.params.id) })

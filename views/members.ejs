@@ -9,7 +9,7 @@
   </head>
   <body>
     <%- include('header') %>
-
+<main class="members-main">
     <p id="message"></p>
 
     <% if (!locals.message==null){%>
@@ -22,7 +22,7 @@
       </li>
       <% }); %>
     </ul>
-
+</main>
     <%- include('footer') %>
 
     <script>

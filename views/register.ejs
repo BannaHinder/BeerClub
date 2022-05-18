@@ -14,32 +14,38 @@
         <section>
           <h2>Happy to have you here!</h2>
           <fieldset>
-              <legend>Please enter you information:</legend>
-          <form id="register-form" action="/register" method="post">
-              <div><label for="name">Name:</label>
-                <input type="text" name="name" id="name" required /></div>
-            
-            <div>    <label for="email">E-mail:</label>
-            <input type="email" name="email" id="email" required />
-        </div>
-        <div>
-            <label for="telNumber">Telephone number:</label>
-            <input type="number" name="telNumber" id="telNumber" required />
-        </div>
-            <div><label for="favouriteBeer">What's your favourite Beer:</label>
-            <input
-              type="text"
-              name="favouriteBeer"
-              id="favouriteBeer"
-              required
-            />
-        </div>
-          </form>
-        </fieldset>
+            <legend>Please enter you information:</legend>
+            <form id="register-form" action="/register" method="post">
+              <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+
+              <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" required />
+              </div>
+              <div>
+                <label for="telNumber">Telephone number:</label>
+                <input type="number" name="telNumber" id="telNumber" required />
+              </div>
+              <div>
+                <label for="favouriteBeer">What's your favourite Beer:</label>
+                <input
+                  type="text"
+                  name="favouriteBeer"
+                  id="favouriteBeer"
+                  required
+                />
+              </div>
+            </form>
+          </fieldset>
         </section>
         <img src="./img/cheers-mug.gif" alt="" />
       </article>
-      <button class="registerbtn" type="submit" form="register-form">REGISTER NEW USER</button>
+      <button class="registerbtn" type="submit" form="register-form">
+        REGISTER NEW USER
+      </button>
     </main>
     <%- include('footer') %>
   </body>
