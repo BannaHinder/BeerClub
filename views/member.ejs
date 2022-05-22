@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Member</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('header') %>
+    <main class="member-bg">
+      <h2>Member: <%= locals.name %></h2>
+    <article>
+      <section> 
+    <p>Email: <%= locals.email %></p>
+    <p>Tel Number: <%= locals.telNumber %></p>
+    <p>Date Joined: <%= locals.date.toUTCString() %></p>
+    <p>Favourite type of beer: <%= locals.favouriteBeer %></p>
+    <a href="/members/delete/<%= _id %>"><button>Delete</button></a>
+    <button id="update-user">Update User</button>
+  </section>
+  <aside class="member-update hide" id="update">
+    <form id="update-form" action="/api/members/<%= _id %>/update" method="post">
+      <p>Update user info:</p> 
+      <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required value="<%= locals.name %>"/>
+        </div>
+        <div>
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" id="email" required value="<%= locals.email %>"/>
+        </div>
+        <div>
+          <label for="telNumber">Telephone number:</label>
+          <input type="number" name="telNumber" id="telNumber" required value="<%= locals.telNumber %>"/>
+        </div>
+        <div>
+          <label for="favouriteBeer">What's your favourite Beer:</label>
+          <input type="text" name="favouriteBeer"  id="favouriteBeer" required
+            value="<%= locals.favouriteBeer %>"
+          />
+        </div>
+        <button type="submit" form="update-form">UPDATE</button>
+      </form>
+</aside>
+  </article>
 
-      <h2> <%= locals.name %> </h2>
-      <p>Email: <%= locals.email %> </p>
-      <p>Tel Number: <%= locals.telNumber %> </p>
-      <p>Date Joined:<%= locals.date.toUTCString() %> </p>
-      <p> Favourite type of beer: <%= locals.favouriteBeer %> </p>
+  </main>
 
-      <a href="/members/delete/<%= _id %>"><button>Delete</button></a>
-      <a href="/members/update/<%= _id %>"><button>Update User</button></a>
-      
-      <%- include('footer') %>
-      <script>
 
-      </script>
-</body>
+    <%- include('footer') %>
+    
+    <script>
+      const toggleUpdateBtn = document.getElementById("update-user");
+      const toggleUpdate = document.getElementById("update");
+      toggleUpdateBtn.addEventListener("click", () => {
+toggleUpdate.classList.toggle('hide')
+      });
+    </script>
+  </body>
 </html>

@@ -9,20 +9,30 @@
   </head>
   <body>
     <%- include('header') %>
-<main class="members-main">
-    <p id="message"></p>
-
-    <% if (!locals.message==null){%>
-    <p><%=locals.message %></p>
-    <%}%>
-    <ul>
-      <% members.forEach((member) => { %>
-      <li>
-        <a href="/members/<%= member._id %>"> <%= member.name%> </a>
-      </li>
-      <% }); %>
-    </ul>
-</main>
+    <main class="members-main">
+      <div class="main-wrapper">
+      <p class="message hide" id="message"></p>
+      <article>
+        <h2>Current members of Beerclub</h2>
+        <% if (!locals.message==null){%>
+        <p><%=locals.message %></p>
+        <%}%>
+        <ul>
+          <% members.forEach((member) => { %>
+          <li>
+            <a href="/members/<%= member._id %>"> <%= member.name%> </a>
+          </li>
+          <% }); %>
+        </ul>
+      </article>
+      <article>
+        <p>Sort memberslist</p>
+        <br>
+        <a href="/members?sort=desc"><button id="desc">Sort A-Z</button></a>
+        <a href="/members?sort=asc"><button id="asc">Sort Z-A</button></a>
+      </article>
+    </div>
+    </main>
     <%- include('footer') %>
 
     <script>
@@ -30,15 +40,23 @@
       function getParams() {
         const urlParams = new URLSearchParams(location.search);
         console.log(urlParams);
+        const params = Object.fromEntries(urlParams.entries());
         if (urlParams.has("deleted")) {
-          const params = Object.fromEntries(urlParams.entries());
+          document.querySelector('.message').classList.remove('hide')
           console.log(params);
-          messagePara.innerHTML = `The user ${params.deleted} was ${Object.keys(params)}`;
+          messagePara.innerHTML = `The user ${params.deleted} was ${Object.keys(
+            params
+          )}`;
         }
         if (urlParams.has("registered")) {
-            const params = Object.fromEntries(urlParams.entries());
+          document.querySelector('.message').classList.remove('hide')
           console.log(params);
           messagePara.innerHTML = `Welcome to Beer Club ${params.registered}!!`;
+        }
+        if (urlParams.has("updated")) {
+          document.querySelector('.message').classList.remove('hide')
+          console.log(params);
+          messagePara.innerHTML = `The user ${params.updated} was updated.`;
         }
       }
       getParams();

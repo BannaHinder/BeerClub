@@ -5,13 +5,19 @@
           box-sizing: border-box;
 }
 
+h1 {
+  font-size: 40px;
+  font-family: "veneerregular", "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
 h2 {
-  margin: 20px 0;
+  font-size: 30px;
+  font-family: "veneerregular", "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 header {
   background: black;
-  height: 150px;
+  height: 130px;
   color: wheat;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,7 +29,7 @@ header img {
   padding: 20px;
 }
 
-header div {
+header > div {
   background: url("/img/beerglass.jpg");
   background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(black)), url("/img/beerglass.jpg");
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, black 100%), url("/img/beerglass.jpg");
@@ -31,6 +37,13 @@ header div {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 20px 20px 0;
 }
 
 main {
@@ -40,6 +53,10 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .start-bg {
@@ -61,13 +78,74 @@ main {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  padding-right: 9vw;
 }
 
-.start-bg h2 {
-  padding: 100px;
+.start-bg section {
+  background: black;
+  margin-right: 50px;
+  height: 100px;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0 solid #E5E7EB;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  border-radius: 40px 40px 0 40px;
 }
 
-.register-bg {
+.start-bg section:after {
+  content: '';
+  position: absolute;
+  border: 2px solid wheat;
+  border-radius: 40px 0 40px 40px;
+  bottom: 5px;
+  left: 5px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.start-bg div {
+  background: black;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.member-bg h2 {
+  background: #000;
+  margin: 50px 0 -50px 0;
+  padding: 10px 10px 10px 50px;
+}
+
+.member-bg aside {
+  position: absolute;
+  top: 350px;
+  width: 400px;
+  background: #000;
+  padding: 20px;
+}
+
+.member-bg aside div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0;
+}
+
+.register-bg, .member-bg {
   min-height: 120vh;
   background: url("/img/beerkeg.jpg");
   background-position: center;
@@ -82,7 +160,7 @@ main {
   display: flex;
 }
 
-.register-bg article {
+.register-bg article, .member-bg article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,21 +176,26 @@ main {
   width: 100%;
   color: wheat;
   height: 300px;
+  position: relative;
 }
 
-.register-bg article section {
+.register-bg article section, .member-bg article section {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   padding-bottom: 20px;
 }
 
-.register-bg article section fieldset {
+.register-bg article section p, .member-bg article section p {
+  margin: 10px 0;
+}
+
+.register-bg article section fieldset, .member-bg article section fieldset {
   border: 2px solid #5f1212;
   border-radius: 8px;
 }
 
-.register-bg article section div {
+.register-bg article section div, .member-bg article section div {
   margin: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,11 +205,11 @@ main {
           justify-content: space-between;
 }
 
-.register-bg article img {
+.register-bg article img, .member-bg article img {
   height: 100%;
 }
 
-.register-bg .registerbtn {
+.register-bg .registerbtn, .member-bg .registerbtn {
   top: 300px;
   margin: 10px;
   border: 5px solid #350b0b;
@@ -145,6 +228,50 @@ main {
   font-weight: bold;
 }
 
+.members-main {
+  min-height: 120vh;
+  background: url("/img/beersplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 8vw;
+}
+
+.members-main .message {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.members-main article {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.members-main article h2 {
+  margin-bottom: 20px;
+}
+
+.members-main .main-wrapper {
+  height: 500px;
+}
+
 footer {
   background: black;
   bottom: 0px;
@@ -158,6 +285,7 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: wheat;
+  overflow: hidden;
 }
 
 footer nav {
@@ -182,5 +310,13 @@ footer div {
 a {
   color: wheat;
   text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -3,25 +3,33 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   box-sizing: border-box;
 }
+h1{
+  font-size: 40px;
+  font-family: "veneerregular", "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+}
 h2 {
-  margin: 20px 0;
+  font-size: 30px;
+  font-family: "veneerregular", "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
 }
 header {
   background: black;
-  height: 150px;
+  height: 130px;
   color: wheat;
   display: flex;
   width: 100%;
   img{
     padding:20px;
   }
-  div{
+  &>div{
     background: url('/img/beerglass.jpg');
     background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 100%), url('/img/beerglass.jpg');
     width: 100%;
     background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    padding:20px 20px 20px 0;
   }
 }
 main{
@@ -29,6 +37,7 @@ main{
     height:100vh;
     color:wheat;
     display: flex;
+    flex-direction: column;
 }
 .start-bg{
   min-height: 120vh;
@@ -40,11 +49,60 @@ main{
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  h2{
-padding: 100px;
+  padding-right: 9vw;
+  section{
+    background: black;
+    margin-right: 50px;
+    height: 100px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    position: relative;
+    border-radius:  40px 40px 0 40px ;
+    &:after {
+      content: '';
+      position: absolute;
+      border: 2px solid wheat;
+      border-radius: 40px 0 40px 40px;
+      bottom: 5px;
+      left: 5px;
+      width: calc(100% - 1px);
+      height: calc(100% - 1px);
+    }
+  }
+  div{
+    background: black;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-top: 20px;
   }
 }
-.register-bg {
+
+.member-bg{
+  h2{
+    background: #000;
+    margin: 50px 0 -50px 0 ;
+    padding: 10px 10px 10px 50px;
+  }
+aside{
+position: absolute;
+top: 350px;
+width:400px;
+background: #000;
+padding: 20px;
+div{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+}
+}
+
+.register-bg, .member-bg{
   min-height: 120vh;
   background: url("/img/beerkeg.jpg");
   background-position: center;
@@ -61,9 +119,13 @@ padding: 100px;
     width: 100%;
     color: wheat;
     height: 300px;
+    position: relative;
     section {
       align-self: center;
       padding-bottom: 20px;
+      p{
+        margin:10px 0;
+      }
       fieldset {
         border: 2px solid rgb(95, 18, 18);
         -moz-border-radius: 8px;
@@ -96,6 +158,37 @@ padding: 100px;
     font-weight: bold;
   }
 }
+.members-main{
+  min-height: 120vh;
+  background: url("/img/beersplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 8vw;
+  .message{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  article{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    h2{
+      margin-bottom: 20px;
+    }
+  }
+  .main-wrapper{
+    height: 500px;
+  }
+}
+
 
 footer {
   background: black;
@@ -106,6 +199,7 @@ footer {
   display: flex;
   justify-content: space-between;
   color: wheat;
+  overflow: hidden;
   nav {
     flex: 1;
     display: flex;
@@ -118,4 +212,13 @@ footer {
 a {
     color: wheat;
     text-decoration: none;
-  }
+    &:hover{
+      color: white;
+    }
+}
+.hide{
+  display: none;
+}
+
+
+
